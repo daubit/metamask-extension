@@ -5,8 +5,8 @@ module.exports = {
     global: {
       branches: 21.24,
       functions: 23.01,
-      lines: 27.19,
-      statements: 27.07,
+      lines: 26.97,
+      statements: 26.85,
     },
   },
   setupFiles: ['./test/setup.js', './test/env.js'],
