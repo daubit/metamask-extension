@@ -187,6 +187,10 @@ class NetworkDropdown extends Component {
 
     if (providerName === 'mainnet') {
       name = this.context.t('mainnet')
+    } else if (providerName === 'binanceMainnet') {
+      name = this.context.t('binanceMainnet')
+    }else if (providerName === 'binanceTestnet') {
+      name = this.context.t('binanceTestnet')
     } else if (providerName === 'ropsten') {
       name = this.context.t('ropsten')
     } else if (providerName === 'kovan') {
@@ -273,6 +277,54 @@ class NetworkDropdown extends Component {
             }}
           >
             {this.context.t('mainnet')}
+          </span>
+        </DropdownMenuItem>
+        <DropdownMenuItem
+          key="binanceMainnet"
+          closeMenu={() => this.props.hideNetworkDropdown()}
+          onClick={() => this.handleClick('binanceMainnet')}
+          style={{ ...dropdownMenuItemStyle, borderColor: '#038789' }}
+        >
+          {providerType === 'binanceMainnet' ? (
+            <i className="fa fa-check" />
+          ) : (
+            <div className="network-check__transparent">✓</div>
+          )}
+          <NetworkDropdownIcon
+            backgroundColor="#29B6AF"
+            isSelected={providerType === 'binanceMainnet'}
+          />
+          <span
+            className="network-name-item"
+            style={{
+              color: providerType === 'binanceMainnet' ? '#ffffff' : '#9b9b9b',
+            }}
+          >
+            {this.context.t('binanceMainnet')}
+          </span>
+        </DropdownMenuItem>
+        <DropdownMenuItem
+          key="binanceTestnet"
+          closeMenu={() => this.props.hideNetworkDropdown()}
+          onClick={() => this.handleClick('binanceTestnet')}
+          style={{ ...dropdownMenuItemStyle, borderColor: '#038789' }}
+        >
+          {providerType === 'binanceTestnet' ? (
+            <i className="fa fa-check" />
+          ) : (
+            <div className="network-check__transparent">✓</div>
+          )}
+          <NetworkDropdownIcon
+            backgroundColor="#29B6AF"
+            isSelected={providerType === 'binanceTestnet'}
+          />
+          <span
+            className="network-name-item"
+            style={{
+              color: providerType === 'binanceTestnet' ? '#ffffff' : '#9b9b9b',
+            }}
+          >
+            {this.context.t('binanceTestnet')}
           </span>
         </DropdownMenuItem>
         <DropdownMenuItem
