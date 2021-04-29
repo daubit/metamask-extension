@@ -23,6 +23,9 @@
   "accountSelectionRequired": {
     "message": "Sie müssen ein Konto auswählen!"
   },
+  "activity": {
+    "message": "Aktivität"
+  },
   "activityLog": {
     "message": "Aktivitätsprotokoll"
   },
@@ -81,6 +84,9 @@
   },
   "asset": {
     "message": "Vermögenswert"
+  },
+  "assets": {
+    "message": "Vermögen"
   },
   "attemptToCancel": {
     "message": "Stornierung versuchen?"
@@ -142,6 +148,9 @@
   },
   "builtInCalifornia": {
     "message": "MetaMask wurde in Kalifornien entwickelt und gebaut."
+  },
+  "buy": {
+    "message": "Kaufen"
   },
   "buyWithWyre": {
     "message": "ETH mit Wyre kaufen"
@@ -205,6 +214,9 @@
   },
   "connectingToRopsten": {
     "message": " Verbinde zum Ropsten Testnetzwerk"
+  },
+  "connectedSites": {
+    "message": "Verbundene Seiten"
   },
   "continueToWyre": {
     "message": "Weiter zu Wyre"
@@ -337,9 +349,6 @@
   },
   "endOfFlowMessage6": {
     "message": "Wenn Sie Ihre mnemonische Phrase erneut sicherstellen müssen, finden Sie sie unter Einstellungen -> Sicherheit."
-  },
-  "endOfFlowMessage7": {
-    "message": "Wenn Sie Fragen haben sollten oder etwas Suspektes bemerken, schreiben Sie eine E-Mail an support@metamask.io."
   },
   "endOfFlowMessage8": {
     "message": "MetaMask kann Ihren Seedschlüssel nicht wiederherstellen. Erfahren Sie mehr."
@@ -490,21 +499,12 @@
   "importAccountSeedPhrase": {
     "message": "Ein Konto mit einem Seed-Schlüssel importieren"
   },
-  "importUsingSeed": {
-    "message": "Mittels mnemonischer Phrase des Kontos importieren"
-  },
   "importWallet": {
     "message": "Wallet importieren"
-  },
-  "importYourExisting": {
-    "message": "Importieren Sie Ihre bestehende Wallet mit einem 12-Wort-Seed-Schlüssel"
   },
   "imported": {
     "message": "Importiert",
     "description": "status showing that an account has been fully loaded into the keyring"
-  },
-  "infoHelp": {
-    "message": "Info & Hilfe"
   },
   "initialTransactionConfirmed": {
     "message": "Ihre erste Transaktion wurde vom Netzwerk bestätigt. Klicken Sie auf Okay, um zurückzukehren."
@@ -744,15 +744,6 @@
   "privateNetwork": {
     "message": "Privates Netzwerk"
   },
-  "protectYourKeys": {
-    "message": "Schützen Sie Ihre Schlüssel!"
-  },
-  "protectYourKeysMessage1": {
-    "message": "Seien Sie mit Ihrer mnemonischen Phrase vorsichtig - es gab Berichte über Websites, die MetaMask zu imitieren versuchen. MetaMask fragt nie nach Ihrer mnemonischen Phrase!"
-  },
-  "protectYourKeysMessage2": {
-    "message": "Bewahren Sie Ihren Schlüssel sicher auf. Wenn etwas faul zu sein scheint oder Sie Zweifel wegen einer Website haben, schicken Sie eine E-Mail an support@metamask.io"
-  },
   "queue": {
     "message": "Warteschlange"
   },
@@ -761,6 +752,9 @@
   },
   "readyToConnect": {
     "message": "Bereit für die Verbindung?"
+  },
+  "receive": {
+    "message": "Empfangen"
   },
   "recents": {
     "message": "Letzte"
@@ -819,9 +813,6 @@
   "restoreAccountWithSeed": {
     "message": "Ihr Konto mit mnemonischer Phrase wiederherstellen"
   },
-  "restoreFromSeed": {
-    "message": "Mit Hilfe der Seed-Wörterfolge wiederherstellen."
-  },
   "revealSeedWords": {
     "message": "Seed-Wörterfolge anzeigen"
   },
@@ -876,9 +867,6 @@
   "secretBackupPhraseWarning": {
     "message": "WARNUNG: Legen Sie niemals Ihre Sicherungsphrase offen. Mit dieser Phrase kann sich jeder Ihr Ether für immer aneignen."
   },
-  "secretPhrase": {
-    "message": "Gib die 12 Wörter deiner geheimem Wörterfolge ein um deinen Vault wiederherzustellen."
-  },
   "securityAndPrivacy": {
     "message": "Sicherheit & Datenschutz"
   },
@@ -900,17 +888,11 @@
   "selectAnAccountHelp": {
     "message": "Wählen Sie das Konto aus, das in MetaMask angezeigt werden soll."
   },
-  "selectCurrency": {
-    "message": "Währung auswählen"
-  },
   "selectEachPhrase": {
     "message": "Bitte wählen Sie jede Phrase aus, um sicherzustellen, dass sie korrekt ist."
   },
   "selectHdPath": {
     "message": "HD-Pfad auswählen"
-  },
-  "selectLocale": {
-    "message": "Gebietsschema auswählen"
   },
   "selectPathHelp": {
     "message": "Wenn Sie Ihre bestehenden Ledger-Konten nachfolgend nicht sehen, versuchen Sie, die Pfade zu \"Legacy (MEW / MyCrypto)\" zu ändern"
@@ -923,9 +905,6 @@
   },
   "sendAmount": {
     "message": "Betrag senden"
-  },
-  "sendETH": {
-    "message": "ETH senden"
   },
   "sendTokens": {
     "message": "Token senden"
@@ -1025,6 +1004,9 @@
   },
   "supportCenter": {
     "message": "Gehe zu unserem Support Center"
+  },
+  "swap": {
+    "message": "Tauschen"
   },
   "switchNetworks": {
     "message": "Netzwerk wechseln"
@@ -1212,9 +1194,6 @@
   },
   "yourPrivateSeedPhrase": {
     "message": "Ihr privater Seed-Schlüssel"
-  },
-  "yourSigRequested": {
-    "message": "Deine Unterschrift wird angefordert"
   },
   "zeroGasPriceOnSpeedUpError": {
     "message": "Keine Gaskosten bei Beschleunigung"
