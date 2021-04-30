@@ -29,6 +29,7 @@ import {
   ENVIRONMENT_TYPE_POPUP,
 } from '../../../../app/scripts/lib/enums'
 import Home from './home.component'
+import { getAddressBook } from '../../selectors/index'
 
 const mapStateToProps = (state) => {
   const { metamask, appState } = state
@@ -81,6 +82,7 @@ const mapStateToProps = (state) => {
     swapsFetchParams: swapsState.fetchParams,
     showAwaitingSwapScreen: swapsState.routeState === 'awaiting',
     isMainnet: getIsMainnet(state),
+    addressBook: getAddressBook(state),
   }
 }
 

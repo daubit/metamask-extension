@@ -14,6 +14,7 @@ import ConnectedAccounts from '../connected-accounts'
 import { Tabs, Tab } from '../../components/ui/tabs'
 import { EthOverview } from '../../components/app/wallet-overview'
 import SwapsIntroPopup from '../swaps/intro-popup'
+import ContactList from '../../components/app/contact-list/contact-list.component.js'
 
 import {
   ASSET_ROUTE,
@@ -27,6 +28,11 @@ import {
   AWAITING_SWAP_ROUTE,
   BUILD_QUOTE_ROUTE,
   VIEW_QUOTE_ROUTE,
+} from '../../helpers/constants/routes'
+
+import {
+  CONTACT_ADD_ROUTE,
+  CONTACT_VIEW_ROUTE,
 } from '../../helpers/constants/routes'
 
 const LEARN_MORE_URL =
@@ -66,6 +72,15 @@ export default class Home extends PureComponent {
     swapsFetchParams: PropTypes.object,
     swapsEnabled: PropTypes.bool,
     isMainnet: PropTypes.bool,
+    addressBook: PropTypes.array,
+    history: PropTypes.object,
+    selectedAddress: PropTypes.string,
+    viewingContact: PropTypes.bool,
+    editingContact: PropTypes.bool,
+    addingContact: PropTypes.bool,
+    showContactContent: PropTypes.bool,
+    hideAddressBook: PropTypes.bool,
+    showingMyAccounts: PropTypes.bool,
   }
 
   state = {
@@ -260,7 +275,11 @@ export default class Home extends PureComponent {
       setSwapsWelcomeMessageHasBeenShown,
       swapsEnabled,
       isMainnet,
+      addressBook,
     } = this.props
+
+    const contacts = addressBook.filter(({ name }) => Boolean(name))
+    const nonContacts = addressBook.filter(({ name }) => !name)
 
     if (forgottenPassword) {
       return <Redirect to={{ pathname: RESTORE_VAULT_ROUTE }} />
@@ -312,6 +331,40 @@ export default class Home extends PureComponent {
                 name={t('activity')}
               >
                 <TransactionList />
+              </Tab>
+              <Tab
+                activeClassName="home__tab--active"
+                className="home__tab"
+                data-testid="home__activity-tab"
+                name={t('contacts')}
+              >
+                <div>
+                  <div>
+                    <ContactList
+                      searchForContacts={() => contacts}
+                      searchForRecents={() => nonContacts}
+                      selectRecipient={(address) => {
+                        //TODO: push to "send transaction" view; catch pop event to return to home instead of settings afterwards
+                        history.push(`${CONTACT_VIEW_ROUTE}/${address}`)
+                      }}
+                      //selectedAddress={selectedAddress}
+                    />
+                  </div>
+                  <div className="address-book-add-button">
+                    <div
+                      className="address-book-add-button__button"
+                      onClick={() => {
+                        history.push(CONTACT_ADD_ROUTE)
+                      }}
+                    >
+                      <img
+                        className="account-menu__item-icon"
+                        src="images/plus-btn-white.svg"
+                        alt={this.context.t('addAccount')}
+                      />
+                    </div>
+                  </div>
+                </div>
               </Tab>
             </Tabs>
           </div>
