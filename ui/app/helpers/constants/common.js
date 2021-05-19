@@ -8,6 +8,8 @@ export const SECONDARY = 'SECONDARY'
 export const NETWORK_TYPES = {
   KOVAN: 'kovan',
   MAINNET: 'mainnet',
+  BINANCE_MAINNET: 'binanceMainnet',
+  BINANCE_TESTNET: 'binanceTestnet',
   RINKEBY: 'rinkeby',
   ROPSTEN: 'ropsten',
   GOERLI: 'goerli',

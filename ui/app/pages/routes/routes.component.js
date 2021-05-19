@@ -354,6 +354,10 @@ export default class Routes extends Component {
     switch (provider.type) {
       case 'mainnet':
         return this.context.t('connectingToMainnet')
+      case 'mainnet':
+        return this.context.t('connectingToBinanceMainnet')
+      case 'mainnet':
+        return this.context.t('connectingToBinanceTestnet')
       case 'ropsten':
         return this.context.t('connectingToRopsten')
       case 'kovan':

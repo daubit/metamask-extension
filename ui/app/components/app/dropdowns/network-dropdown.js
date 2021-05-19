@@ -17,6 +17,10 @@ import {
 
 import { Dropdown, DropdownMenuItem } from './components/dropdown'
 import NetworkDropdownIcon from './components/network-dropdown-icon'
+import { binanceRpcListDetail } from '../../../../../app/scripts/BinanceDefaultState'
+
+
+//import binanceRpcListDetail from '../../../../../app/scripts/BinanceDefaultState'
 
 // classes from nodes of the toggle element.
 const notToggleElementClassnames = [
@@ -187,6 +191,10 @@ class NetworkDropdown extends Component {
 
     if (providerName === 'mainnet') {
       name = this.context.t('mainnet')
+    } else if (providerName === 'binanceMainnet') {
+      name = this.context.t('binanceMainnet')
+    }else if (providerName === 'binanceTestnet') {
+      name = this.context.t('binanceTestnet')
     } else if (providerName === 'ropsten') {
       name = this.context.t('ropsten')
     } else if (providerName === 'kovan') {
@@ -208,7 +216,8 @@ class NetworkDropdown extends Component {
       setNetworksTabAddMode,
       setSelectedSettingsRpcUrl,
     } = this.props
-    const rpcListDetail = this.props.frequentRpcListDetail
+    const rpcListCustom = this.props.frequentRpcListDetail.filter( item => item.custom == true)
+    const rpcListBinance = binanceRpcListDetail
     const isOpen = this.props.networkDropdownOpen
     const dropdownMenuItemStyle = {
       fontSize: '16px',
@@ -251,6 +260,7 @@ class NetworkDropdown extends Component {
             {this.context.t('defaultNetwork')}
           </div>
         </div>
+        {this.renderCustomRpcList(rpcListBinance, this.props.provider)}
         <DropdownMenuItem
           key="main"
           closeMenu={() => this.props.hideNetworkDropdown()}
@@ -371,7 +381,7 @@ class NetworkDropdown extends Component {
             {this.context.t('goerli')}
           </span>
         </DropdownMenuItem>
-        {this.renderCustomRpcList(rpcListDetail, this.props.provider)}
+        {this.renderCustomRpcList(rpcListCustom, this.props.provider)}
         <DropdownMenuItem
           closeMenu={() => this.props.hideNetworkDropdown()}
           onClick={() => {

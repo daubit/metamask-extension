@@ -89,6 +89,40 @@ export default class Network extends Component {
           </NetworkIndicator>
         )
 
+    case 'binanceMainnet':
+      return (
+        <NetworkIndicator
+          disabled={disabled}
+          hoverText={t('binanceMainnet')}
+          onClick={onClick}
+          providerName={providerName}
+        >
+          <NetworkDropdownIcon
+            backgroundColor="#038789"
+            nonSelectBackgroundColor="#15afb2"
+            loading={networkNumber === 'loading'}
+          />
+          <div className="network-name">{t('binanceMainnet')}</div>
+        </NetworkIndicator>
+      )
+      
+    case 'binanceTestnet':
+      return (
+        <NetworkIndicator
+          disabled={disabled}
+          hoverText={t('binanceTestnet')}
+          onClick={onClick}
+          providerName={providerName}
+        >
+          <NetworkDropdownIcon
+            backgroundColor="#038789"
+            nonSelectBackgroundColor="#15afb2"
+            loading={networkNumber === 'loading'}
+          />
+          <div className="network-name">{t('binanceTestnet')}</div>
+        </NetworkIndicator>
+      )
+
       case 'ropsten':
         return (
           <NetworkIndicator

@@ -16,6 +16,7 @@ const initialState = {
         chainId: '0x539',
         ticker: 'ETH',
         nickname: 'Localhost 8545',
+        custom: false,
         rpcPrefs: {},
       },
     ],

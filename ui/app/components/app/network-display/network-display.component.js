@@ -7,10 +7,14 @@ import {
   RINKEBY_NETWORK_ID,
   KOVAN_NETWORK_ID,
   GOERLI_NETWORK_ID,
+  BINANCE_MAINNET_NETWORK_ID,
+  BINANCE_TESTNET_NETWORK_ID
 } from '../../../../../app/scripts/controllers/network/enums'
 
 const networkIdToTypeMap = {
   [MAINNET_NETWORK_ID]: 'mainnet',
+  [BINANCE_MAINNET_NETWORK_ID]: 'binanceMainnet',
+  [BINANCE_TESTNET_NETWORK_ID]: 'binanceTestnet',
   [ROPSTEN_NETWORK_ID]: 'ropsten',
   [RINKEBY_NETWORK_ID]: 'rinkeby',
   [GOERLI_NETWORK_ID]: 'goerli',

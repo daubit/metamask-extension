@@ -14,12 +14,12 @@ import { ENVIRONMENT_TYPE_FULLSCREEN } from '../../../../../app/scripts/lib/enum
 import { getEnvironmentType } from '../../../../../app/scripts/lib/util'
 import NetworksTab from './networks-tab.component'
 import { defaultNetworksData } from './networks-tab.constants'
+import { binanceRpcListDetail } from '../../../../../app/scripts/BinanceDefaultState'
 
 const defaultNetworks = defaultNetworksData.map((network) => ({
   ...network,
   viewOnly: true,
 }))
-
 const mapStateToProps = (state, ownProps) => {
   const {
     location: { pathname },
@@ -34,6 +34,7 @@ const mapStateToProps = (state, ownProps) => {
   const { networksTabSelectedRpcUrl, networksTabIsInAddMode } = state.appState
 
   const frequentRpcNetworkListDetails = frequentRpcListDetail.map((rpc) => {
+    if(rpc.custom == true)
     return {
       label: rpc.nickname,
       iconColor: '#6A737D',
@@ -42,13 +43,28 @@ const mapStateToProps = (state, ownProps) => {
       chainId: rpc.chainId,
       ticker: rpc.ticker,
       blockExplorerUrl: rpc.rpcPrefs?.blockExplorerUrl || '',
+      viewOnly: rpc.custom
+    }
+  })
+  const binanceRpcNetworkListDetails = binanceRpcListDetail.map((rpc) => {
+    return {
+      label: rpc.nickname,
+      iconColor: '#5A737D',
+      providerType: 'rpc',
+      rpcUrl: rpc.rpcUrl,
+      chainId: rpc.chainId,
+      ticker: rpc.ticker,
+      blockExplorerUrl: rpc.rpcPrefs?.blockExplorerUrl || '',
+      viewOnly: rpc.custom
     }
   })
 
   const networksToRender = [
     ...defaultNetworks,
     ...frequentRpcNetworkListDetails,
+    ...binanceRpcNetworkListDetails,
   ]
+  
   let selectedNetwork =
     networksToRender.find(
       (network) => network.rpcUrl === networksTabSelectedRpcUrl,
