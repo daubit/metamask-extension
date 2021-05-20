@@ -218,6 +218,9 @@
   "connectedSites": {
     "message": "Verbundene Seiten"
   },
+  "contacts": {
+    "message": "Kontakte"
+  },
   "continueToWyre": {
     "message": "Weiter zu Wyre"
   },
