@@ -9,6 +9,7 @@ import { I18nContext } from '../../../contexts/i18n'
 import {
   SEND_ROUTE,
   BUILD_QUOTE_ROUTE,
+  CONTACT_ADD_ROUTE,
 } from '../../../helpers/constants/routes'
 import {
   useMetricEvent,
@@ -52,6 +53,13 @@ const EthOverview = ({ className }) => {
       category: 'Navigation',
       action: 'Home',
       name: 'Clicked Deposit',
+    },
+  })
+  const addContactEvent = useMetricEvent({
+    eventOpts: {
+      category: 'Navigation',
+      action: 'Home',
+      name: 'Clicked Add Contact',
     },
   })
   const history = useHistory()
@@ -131,7 +139,7 @@ const EthOverview = ({ className }) => {
               history.push(SEND_ROUTE)
             }}
           />
-          {swapsEnabled ? (
+          {chainId !== MAINNET_CHAIN_ID ? (
             <IconButton
               className="eth-overview__button"
               disabled={chainId !== MAINNET_CHAIN_ID}
@@ -159,6 +167,16 @@ const EthOverview = ({ className }) => {
               )}
             />
           ) : null}
+          <IconButton
+            className="eth-overview__button"
+            data-testid="eth-overview-add-contact"
+            Icon={SendIcon}
+            label={t('addContact')}
+            onClick={() => {
+              addContactEvent()
+              history.push(CONTACT_ADD_ROUTE)
+            }}
+          />
         </>
       }
       className={className}
