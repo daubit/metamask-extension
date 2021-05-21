@@ -8,6 +8,7 @@ export default function getAccountLink(address, network, rpcPrefs) {
 
   // eslint-disable-next-line radix
   const net = parseInt(network)
+  console.log("Network Id for BSC",net)
   switch (net) {
     case 1: // main net
       return `https://etherscan.io/address/${address}`
