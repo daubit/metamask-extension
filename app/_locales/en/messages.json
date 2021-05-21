@@ -46,6 +46,9 @@
   "addAccount": {
     "message": "Add an account"
   },
+  "addContact": {
+    "message": "Add contact"
+  },
   "addAcquiredTokens": {
     "message": "Add the tokens you've acquired using MetaMask"
   },

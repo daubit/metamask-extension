@@ -9,6 +9,7 @@ import { I18nContext } from '../../../contexts/i18n'
 import {
   SEND_ROUTE,
   BUILD_QUOTE_ROUTE,
+  CONTACT_ADD_ROUTE,
 } from '../../../helpers/constants/routes'
 import {
   useMetricEvent,
@@ -36,6 +37,7 @@ import {
 import IconButton from '../../ui/icon-button'
 import { MAINNET_CHAIN_ID } from '../../../../../app/scripts/controllers/network/enums'
 import WalletOverview from './wallet-overview'
+import Approve from '../../ui/icon/approve-icon.component'
 
 const EthOverview = ({ className }) => {
   const dispatch = useDispatch()
@@ -52,6 +54,13 @@ const EthOverview = ({ className }) => {
       category: 'Navigation',
       action: 'Home',
       name: 'Clicked Deposit',
+    },
+  })
+  const addContactEvent = useMetricEvent({
+    eventOpts: {
+      category: 'Navigation',
+      action: 'Home',
+      name: 'Clicked Add Contact',
     },
   })
   const history = useHistory()
@@ -131,34 +140,16 @@ const EthOverview = ({ className }) => {
               history.push(SEND_ROUTE)
             }}
           />
-          {swapsEnabled ? (
-            <IconButton
-              className="eth-overview__button"
-              disabled={chainId !== MAINNET_CHAIN_ID}
-              Icon={SwapIcon}
-              onClick={() => {
-                if (chainId === MAINNET_CHAIN_ID) {
-                  enteredSwapsEvent()
-                  dispatch(setSwapsFromToken(swapsEthToken))
-                  if (usingHardwareWallet) {
-                    global.platform.openExtensionInBrowser(BUILD_QUOTE_ROUTE)
-                  } else {
-                    history.push(BUILD_QUOTE_ROUTE)
-                  }
-                }
-              }}
-              label={t('swap')}
-              tooltipRender={(contents) => (
-                <Tooltip
-                  title={t('onlyAvailableOnMainnet')}
-                  position="bottom"
-                  disabled={chainId === MAINNET_CHAIN_ID}
-                >
-                  {contents}
-                </Tooltip>
-              )}
-            />
-          ) : null}
+          <IconButton
+            className="eth-overview__button"
+            data-testid="eth-overview-add-contact"
+            Icon={Approve}
+            label={t('addContact')}
+            onClick={() => {
+              addContactEvent()
+              history.push(CONTACT_ADD_ROUTE)
+            }}
+          />
         </>
       }
       className={className}
