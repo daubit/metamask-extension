@@ -17,7 +17,6 @@ export function getConversionRate(state) {
 }
 
 export function getNativeCurrency(state) {
-  console.log(state.metamask)
   return state.metamask.nativeCurrency
 }
 
