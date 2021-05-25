@@ -2254,7 +2254,6 @@ export default class MetamaskController extends EventEmitter {
         nativeCurrency: ticker,
         currentCurrency: currencyCode,
       }
-      console.log(currencyState)
       this.currencyRateController.update(currencyState)
       this.currencyRateController.configure(currencyState)
       cb(null, this.currencyRateController.state)
