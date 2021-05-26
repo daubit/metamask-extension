@@ -350,20 +350,6 @@ export default class Home extends PureComponent {
                       //selectedAddress={selectedAddress}
                     />
                   </div>
-                  <div className="address-book-add-button">
-                    <div
-                      className="address-book-add-button__button"
-                      onClick={() => {
-                        history.push(CONTACT_ADD_ROUTE)
-                      }}
-                    >
-                      <img
-                        className="account-menu__item-icon"
-                        src="images/plus-btn-white.svg"
-                        alt={this.context.t('addAccount')}
-                      />
-                    </div>
-                  </div>
                 </div>
               </Tab>
             </Tabs>
